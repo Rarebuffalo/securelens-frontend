@@ -5,12 +5,11 @@ export const scansApi = {
     return apiClient<any>('/scans/trends', { requireAuth: true });
   },
   
-  // Stubs for future features that we will implement next
   triggerScan: async (url: string) => {
     return apiClient<any>('/scan', { 
         method: 'POST', 
         body: JSON.stringify({ url }), 
-        requireAuth: true // or false depending on anonymous vs logged in, we are assuming logged in here.
+        requireAuth: true
     });
   },
 
@@ -20,5 +19,9 @@ export const scansApi = {
 
   getScanDetails: async (id: string) => {
     return apiClient<any>(`/scans/${id}`, { requireAuth: true });
+  },
+
+  compareScans: async (baseScanId: string, targetScanId: string) => {
+    return apiClient<any>(`/scans/compare?base=${baseScanId}&target=${targetScanId}`, { requireAuth: true });
   }
 };
