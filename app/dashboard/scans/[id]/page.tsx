@@ -220,7 +220,7 @@ export default function ScanDetailsPage() {
                     </div>
                 ) : (
                     <p className="text-slate-700 dark:text-slate-300 leading-relaxed font-medium text-sm italic">
-                        "{narrative?.narrative || "No narrative generated."}"
+                        &quot;{narrative?.narrative || "No narrative generated."}&quot;
                     </p>
                 )}
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-6 font-medium">

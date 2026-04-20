@@ -1,0 +1,53 @@
+
+/home/Krishna-Singh/securelens-frontend/app/dashboard/account/page.tsx
+  4:34  warning  'Bell' is defined but never used  @typescript-eslint/no-unused-vars
+
+/home/Krishna-Singh/securelens-frontend/app/dashboard/page.tsx
+   5:40  warning  'Shield' is defined but never used              @typescript-eslint/no-unused-vars
+   6:10  warning  'motion' is defined but never used              @typescript-eslint/no-unused-vars
+  14:25  warning  'isLoading' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/home/Krishna-Singh/securelens-frontend/app/dashboard/scans/[id]/page.tsx
+    7:10   warning  'ArrowLeft' is defined but never used                            @typescript-eslint/no-unused-vars
+    7:21   warning  'Clock' is defined but never used                                @typescript-eslint/no-unused-vars
+    7:28   warning  'ShieldAlert' is defined but never used                          @typescript-eslint/no-unused-vars
+    7:90   warning  'AlertTriangle' is defined but never used                        @typescript-eslint/no-unused-vars
+    7:105  warning  'Hash' is defined but never used                                 @typescript-eslint/no-unused-vars
+    7:119  warning  'Search' is defined but never used                               @typescript-eslint/no-unused-vars
+    8:8    warning  'Link' is defined but never used                                 @typescript-eslint/no-unused-vars
+  223:25   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  223:77   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+/home/Krishna-Singh/securelens-frontend/app/dashboard/scans/page.tsx
+    5:28   warning  'Settings' is defined but never used                                                                                                                                                       @typescript-eslint/no-unused-vars
+   24:9    warning  The 'scans' logical expression could make the dependencies of useMemo Hook (at line 34) change on every render. To fix this, wrap the initialization of 'scans' in its own useMemo() Hook  react-hooks/exhaustive-deps
+   24:9    warning  The 'scans' logical expression could make the dependencies of useMemo Hook (at line 39) change on every render. To fix this, wrap the initialization of 'scans' in its own useMemo() Hook  react-hooks/exhaustive-deps
+   29:62   warning  'i' is defined but never used                                                                                                                                                              @typescript-eslint/no-unused-vars
+  211:112  error    Comments inside children section of tag should be placed inside braces                                                                                                                     react/jsx-no-comment-textnodes
+
+/home/Krishna-Singh/securelens-frontend/app/dashboard/settings/page.tsx
+  6:60  warning  'HelpCircle' is defined but never used  @typescript-eslint/no-unused-vars
+
+/home/Krishna-Singh/securelens-frontend/app/dashboard/support/page.tsx
+   3:22  warning  'Mail' is defined but never used                                 @typescript-eslint/no-unused-vars
+  39:70  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/home/Krishna-Singh/securelens-frontend/components/ThemeToggle.tsx
+  12:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/home/Krishna-Singh/securelens-frontend/components/ThemeToggle.tsx:12:5
+  10 |
+  11 |   useEffect(() => {
+> 12 |     setMounted(true);
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  13 |   }, []);
+  14 |
+  15 |   if (!mounted) {  react-hooks/set-state-in-effect
+
+✖ 22 problems (5 errors, 17 warnings)

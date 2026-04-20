@@ -36,7 +36,7 @@ export default function SupportPage() {
             <HelpCircle className="w-8 h-8 text-indigo-600" />
             Support Center
         </h1>
-        <p className="text-slate-500 font-medium text-sm max-w-xl">We're here to help! Search through our frequently asked questions or submit a ticket to our security engineering team.</p>
+        <p className="text-slate-500 font-medium text-sm max-w-xl">We&apos;re here to help! Search through our frequently asked questions or submit a ticket to our security engineering team.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
