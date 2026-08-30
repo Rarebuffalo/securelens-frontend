@@ -1,3 +1,122 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
+
+:root {
+  --canvas: #fafafa;
+  --surface: #f4f4f5;
+  --surface-raised: #ffffff;
+  --text: #09090b;
+  --muted: #71717a;
+  --faint: #a1a1aa;
+  --border: #e4e4e7;
+  --border-strong: #d4d4d8;
+  --accent: #059669;
+  --accent-dim: #10b981;
+  --accent-glow: rgba(5, 150, 105, 0.15);
+  --danger: #dc2626;
+  --danger-glow: rgba(220, 38, 38, 0.15);
+  --warning: #d97706;
+  --warning-glow: rgba(217, 119, 6, 0.15);
+  --cyan: #0891b2;
+  --grid-line: rgba(0, 0, 0, 0.05);
+  --hero-fade: #fafafa;
+  --panel-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+.dark {
+  --canvas: #060709;
+  --surface: #0e1116;
+  --surface-raised: #141820;
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+  --faint: #4b5563;
+  --border: #1f2937;
+  --border-strong: #374151;
+  --accent: #10b981;
+  --accent-dim: #059669;
+  --accent-glow: rgba(16, 185, 129, 0.2);
+  --danger: #ef4444;
+  --danger-glow: rgba(239, 68, 68, 0.2);
+  --warning: #f59e0b;
+  --warning-glow: rgba(245, 158, 11, 0.2);
+  --cyan: #06b6d4;
+  --grid-line: rgba(255, 255, 255, 0.04);
+  --hero-fade: #060709;
+  --panel-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  background-color: var(--canvas);
+  color: var(--text);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+.font-mono {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Background Grids */
+.bg-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+}
+
+.bg-dot-grid {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, var(--border-strong) 1px, transparent 1px);
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee var(--marquee-duration, 40s) linear infinite;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee var(--marquee-duration, 40s) linear infinite reverse;
+}
+
+.animate-marquee:hover,
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1.2s infinite;
+}
+
+/* Custom Scrollbar for terminal boxes */
+.terminal-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.terminal-scroll::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+.terminal-scroll::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
+
+.terminal-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
